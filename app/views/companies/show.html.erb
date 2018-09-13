@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+<h1>Form</h1>
+<%= form_with(model: [ @company, @employee ]) do |form| %>
+<br>
+<%= form.label :first_name %>
+<%= form.text_field :first_name %>
+<%= form.label :last_name %>
+<%= form.text_field :last_name %>
+<%= form.label :email %>
+<%= form.text_field :email %>
+<%= form.label :area %>
+<%= form.select :area_id, @areas %>
+
+<%= form.submit "Enviar" %>
+<% end %>
